@@ -9,50 +9,199 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+        macros {
+                // Existing macros
+                import_macro: import_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp I &kp M &kp P &kp O &kp R &kp T>;
+                };
+                class_macro: class_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp C &kp L &kp A &kp S &kp S>;
+                };
+                match_macro: match_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp M &kp A &kp T &kp C &kp H>;
+                };
+                struct_macro: struct_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp S &kp T &kp R &kp U &kp C &kp T>;
+                };
+                return_macro: return_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp R &kp E &kp T &kp U &kp R &kp N>;
+                };
+                let_macro: let_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp L &kp E &kp T>;
+                };
+                pub_macro: pub_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp P &kp U &kp B>;
+                };
+                fn_macro: fn_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp F &kp N &kp SPACE>;
+                };
+                impl_macro: impl_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp I &kp M &kp P &kp L &kp SPACE>;
+                };
+                trait_macro: trait_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp T &kp R &kp A &kp I &kp T &kp SPACE>;
+                };
+                enum_macro: enum_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp E &kp N &kp U &kp M &kp SPACE>;
+                };                
+                var_macro: var_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp V &kp A &kp R &kp SPACE>;
+                };               
+                const_macro: const_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp C &kp O &kp N &kp S &kp T &kp SPACE>;
+                };
+                auto_macro: auto_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp A &kp U &kp T &kp O &kp SPACE>;
+                };
+                namespace_macro: namespace_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp N &kp A &kp M &kp E &kp S &kp P &kp A &kp C &kp E &kp SPACE>;
+                };                
+                if_macro: if_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp I &kp F &kp SPACE>;
+                };
+                for_macro: for_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp F &kp O &kp R &kp SPACE>;
+                };
+                while_macro: while_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp W &kp H &kp I &kp L &kp E &kp SPACE>;
+                };                
+                else_macro: else_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp E &kp L &kp S &kp E &kp SPACE>;
+                };
+                else_if_macro: else_if_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp E &kp L &kp S &kp E &kp SPACE &kp I &kp F &kp SPACE>;
+                };
+                std_macro: std_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp S &kp T &kp D &kp COLON &kp COLON>;
+                };
+        };
+        
+        behaviors {
+                tri_layer: tri_layer {
+                        compatible = "zmk,behavior-tri-layer";
+                        #binding-cells = <0>;
+                        layers = <1 2 4>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
+                
                 default_layer {
-                        display-name = "Default Layer";
+                        display-name = "default_layer";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// | PWR  |  Q    |  W    |  F    |  P     |  B  |   |  J  |  L     |  U    |  Y    |  ;    | SLEEP |
+// | TAB  | A/ALT | R/OPT | S/CMD | T/CTRL |  G  |   |  M  | N/CTRL | E/CMD | I/OPT | O/ALT | DEL   |
+// |      |  Z    |  X    |  C    |  D     |  V  |   |  K  |  H     |  ,    |  .    |  /    | BKSP  |
+//                        |  ESC  | L1     | SPC |   | ENT | L2     |  L3   |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &kp PWR  &kp Q      &kp W      &kp F      &kp P       &kp B          &kp J    &kp L       &kp U      &kp Y      &kp SEMI   &kp SLEEP
+   &kp TAB  &mt LALT A &mt LOPT R &mt LGUI S &mt LCTRL T &kp G          &kp M    &mt RCTRL N &mt RGUI E &mt ROPT I &mt RALT O &kp DEL
+   &trans   &kp Z      &kp X      &kp C      &kp D       &kp V          &kp K    &kp H       &kp COMMA  &kp DOT    &kp FSLH   &kp BSPC
+                                  &kp ESC    &tri_layer  &kp SPACE      &kp RET  &tri_layer  &mo 3
                         >;
                 };
+
                 lower_layer {
-                        display-name = "Lower Layer";
+                        display-name = "lower_layer";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |      |  !  |  +   |  -  |   &  |   ~  |   |  #  |  7  |  8  |  9  |  `  |      |
+// |      |  @  |  *   |  /  |  "|" |   >  |   |  _  |  4  |  5  |  6  |  '  |      |
+// |   /  |  ?  |  %   |  =  |   ^  |   <  |   |  :  |  1  |  2  |  3  |  "  |      |
+//                     |     |      | SPC  |   | ENT |     |  0  |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &trans     &kp EXCL     &kp PLUS     &kp MINUS    &kp AMPS       &kp TILDE      &kp HASH       &kp N7         &kp N8         &kp N9       &kp GRAVE    &trans
+   &trans     &kp AT       &kp STAR     &kp FSLH     &kp PIPE       &kp GT         &kp UNDER      &kp N4         &kp N5         &kp N6       &kp SQT      &trans
+   &kp FSLH   &kp QMARK    &kp PRCNT    &kp EQUAL    &kp CARET      &kp LT         &kp COLON      &kp N1         &kp N2         &kp N3       &kp DQT      &trans
+                                        &trans       &trans         &kp SPACE      &kp RET        &trans         &kp N0
                         >;
                 };
 
                 raise_layer {
-                        display-name = "Raise Layer";
+                        display-name = "raise_layer";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |      |     |      | UP   |       |     |   |     |      |     |      |     |     |
+// |      |     | LEFT | DOWN | RIGHT |     |   |  (  |  )   |  [  |  ]   |     |     |
+// |      |     |      |      |       |     |   |  {  |  }   |  <  |  >   |     |     |
+//                     |      |       | SPC |   | ENT |      |     |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans     &trans       &trans       &kp UP       &trans         &trans         &trans         &trans         &trans         &trans       &trans       &trans
+   &trans     &trans       &kp LEFT     &kp DOWN     &kp RIGHT      &trans         &kp LPAR       &kp RPAR       &kp LBKT       &kp RBKT     &trans       &trans
+   &trans     &trans       &trans       &trans       &trans         &trans         &kp LBRC       &kp RBRC       &kp LT         &kp GT       &trans       &trans
+                                        &trans       &trans         &kp SPACE      &kp RET        &trans         &trans
+                        >;
+                };
+
+                fourth_layer {
+                        display-name = "fourth_layer";
+// -----------------------------------------------------------------------------------------
+// |     | PAGE_UP   | C_BRI_UP  | VOL_UP   | NEXT       |     |    | F11 | F12 | F13 | F14 | F16 |     |
+// |     | PAGE_DOWN | C_BRI_DEC | VOL_DOWN | PAUSE/PLAY |     |    | F6  | F7  | F8  |  F9 | F10 |     |
+// |     |           | C_BRI_MIN | MUTE     | PREV       |     |    | F1  | F2  | F3  |  F4 | F5  |     |
+//                               |          |            | SPC |    | ENT |     |     |
+                        bindings = <
+   &trans     &kp PG_UP    &kp C_BRI_UP &kp C_VOL_UP &kp C_NEXT     &trans         &kp F11        &kp F12        &kp F13        &kp F14      &kp F16      &trans
+   &trans     &kp PG_DN    &kp C_BRI_DN &kp C_VOL_DN &kp C_PP       &trans         &kp F6         &kp F7         &kp F8         &kp F9       &kp F10      &trans
+   &trans     &trans       &kp C_BRI_MIN &kp C_MUTE  &kp C_PREV     &trans         &kp F1         &kp F2         &kp F3         &kp F4       &kp F5       &trans
+                                        &trans       &trans         &kp SPACE      &kp RET        &trans         &trans
+                        >;
+                };
+
+                fifth_layer {
+                        display-name = "macro_layer";
+// -----------------------------------------------------------------------------------------
+// |      | ../   | ./    | ::     | =>     |     |   |     | import | namespace | std::   |      |     |
+// |      | fn    | impl  | trait  | struct |     |   |     | const  | if        | else if | else |     |
+// |      | enum  | match | return | class  |     |   |     | auto   | for       | while   | let  |     |
+//                        |        |        | SPC |   | ENT |        |           |
+                        bindings = <
+   &trans     &kp DOT      &kp DOT      &kp DOT      &kp FSLH       &kp CARET      &trans         &import_macro  &namespace_macro &std_macro   &trans       &trans
+   &trans     &fn_macro    &impl_macro  &trait_macro &struct_macro  &trans         &trans         &const_macro  &if_macro      &else_if_macro &else_macro  &trans
+   &trans     &enum_macro  &match_macro &return_macro &class_macro  &trans         &trans         &auto_macro   &for_macro     &while_macro  &let_macro   &trans
+                                        &trans       &trans         &kp SPACE      &kp RET        &trans         &trans
                         >;
                 };
         };
