@@ -160,7 +160,7 @@
    &kp C_PWR &kp Q      &kp W      &kp F       &kp P       &kp B          &kp J    &kp L       &kp U      &kp Y      &kp SEMI   &kp C_SLEEP
    &kp TAB   &mt LALT A &mt LCTRL R &mt LGUI S &mt LSHFT T &kp G          &kp M    &mt RSHFT N &mt RGUI E &mt RCTRL I &mt RALT O &kp DEL
    &trans    &kp Z      &kp X      &kp C       &kp D       &kp V          &kp K    &kp H       &kp COMMA  &kp DOT    &kp FSLH   &kp BSPC
-                                  &kp ESC     &tri_layer  &kp SPACE      &kp RET  &tri_layer  &mo 3
+                                  &kp ESC     &mo 1  &kp SPACE      &kp RET  &mo 2  &mo 3
                         >;
                 };
 
