@@ -116,6 +116,26 @@
                         #binding-cells = <0>;
                         bindings = <&kp S &kp T &kp D &kp COLON &kp COLON>;
                 };
+                dotdot_macro: dotdot_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp DOT &KP DOT &kp FLSH>;
+                };
+                dot_macro: dot_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp DOT &kp FSLH>;
+                };
+                scope_macro: scope_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp COLON &kp COLON>;
+                };
+                thickarrow_macro: thickarrow_macro {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp EQUAL &kp GT>;
+                };
         };
         
         behaviors {
@@ -198,10 +218,10 @@
 // |      | enum  | match | return | class  |     |   |     | auto   | for       | while   | let  |     |
 //                        |        |        | SPC |   | ENT |        |           |
                         bindings = <
-   &trans     &kp DOT      &kp DOT      &kp DOT      &kp FSLH       &kp CARET      &trans         &import_macro  &namespace_macro &std_macro   &trans       &trans
-   &trans     &fn_macro    &impl_macro  &trait_macro &struct_macro  &trans         &trans         &const_macro  &if_macro      &else_if_macro &else_macro  &trans
-   &trans     &enum_macro  &match_macro &return_macro &class_macro  &trans         &trans         &auto_macro   &for_macro     &while_macro  &let_macro   &trans
-                                        &trans       &trans         &kp SPACE      &kp RET        &trans         &trans
+   &trans     &dotdot_macro &dot_macro   &scope_macro  &thickarrow_macro &trans        &trans      &import_macro  &namespace_macro &std_macro   &trans       &trans
+   &trans     &fn_macro     &impl_macro  &trait_macro  &struct_macro     &trans        &trans      &const_macro  &if_macro      &else_if_macro &else_macro  &trans
+   &trans     &enum_macro   &match_macro &return_macro &class_macro      &trans        &trans      &auto_macro   &for_macro     &while_macro  &let_macro   &trans
+                                         &trans        &trans            &kp SPACE     &kp RET     &trans         &trans
                         >;
                 };
         };
