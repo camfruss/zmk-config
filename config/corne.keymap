@@ -10,7 +10,6 @@
 
 / {
         macros {
-                // Existing macros
                 import_macro: import_macro {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
@@ -119,7 +118,7 @@
                 dotdot_macro: dotdot_macro {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp DOT &KP DOT &kp FLSH>;
+                        bindings = <&kp DOT &kp DOT &kp FSLH>;
                 };
                 dot_macro: dot_macro {
                         compatible = "zmk,behavior-macro";
