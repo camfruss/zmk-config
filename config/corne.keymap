@@ -152,13 +152,13 @@
                 default_layer {
                         display-name = "default_layer";
 // -----------------------------------------------------------------------------------------
-// | PWR  |  Q    |  W    |  F    |  P     |  B  |   |  J  |  L     |  U    |  Y    |  ;    | SLEEP |
-// | TAB  | A/ALT | R/OPT | S/CMD | T/CTRL |  G  |   |  M  | N/CTRL | E/CMD | I/OPT | O/ALT | DEL   |
-// |      |  Z    |  X    |  C    |  D     |  V  |   |  K  |  H     |  ,    |  .    |  /    | BKSP  |
-//                        |  ESC  | L1     | SPC |   | ENT | L2     |  L3   |
+// | PWR  |  Q    |  W     |  F    |  P     |  B  |   |  J  |  L     |  U    |  Y     |  ;    | SLEEP |
+// | TAB  | A/ALT | R/CTRL | S/CMD | T/SHFT |  G  |   |  M  | N/SHFT | E/CMD | I/CTRL | O/ALT | DEL   |
+// |      |  Z    |  X     |  C    |  D     |  V  |   |  K  |  H     |  ,    |  .     |  /    | BKSP  |
+//                         |  ESC  | L1     | SPC |   | ENT | L2     |  L3   |
                         bindings = <
    &kp PWR  &kp Q      &kp W      &kp F      &kp P       &kp B          &kp J    &kp L       &kp U      &kp Y      &kp SEMI   &kp SLEEP
-   &kp TAB  &mt LALT A &mt LOPT R &mt LGUI S &mt LCTRL T &kp G          &kp M    &mt RCTRL N &mt RGUI E &mt ROPT I &mt RALT O &kp DEL
+   &kp TAB  &mt LALT A &mt LCTRL R &mt LGUI S &mt LSHFT T &kp G          &kp M    &mt RSHFT N &mt RGUI E &mt RCTRL I &mt RALT O &kp DEL
    &trans   &kp Z      &kp X      &kp C      &kp D       &kp V          &kp K    &kp H       &kp COMMA  &kp DOT    &kp FSLH   &kp BSPC
                                   &kp ESC    &tri_layer  &kp SPACE      &kp RET  &tri_layer  &mo 3
                         >;
