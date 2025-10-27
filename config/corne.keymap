@@ -225,7 +225,7 @@
 //                     |      |       | SPC |   | ENT |       |     |
                         bindings = <
    &trans     &trans       &trans       &trans       &trans         &trans         &trans         &trans         &kp UP        &trans        &trans       &trans
-   &trans     &trans       &trans       &trans       &trans         &trans         &trans         &kp LEFT       &kp DOWN      &trans RIGHT  &trans       &trans
+   &trans     &trans       &trans       &trans       &trans         &trans         &trans         &kp LEFT       &kp DOWN      &kp RIGHT     &trans       &trans
    &trans     &trans       &trans       &trans       &trans         &trans         &trans         &trans         &trans        &trans        &trans        &trans
                                         &trans       &trans         &kp SPACE      &kp RET        &trans         &trans
                         >;
