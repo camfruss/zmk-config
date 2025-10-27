@@ -189,15 +189,15 @@
                 default_layer {
                         display-name = "default_layer";
 // -----------------------------------------------------------------------------------------
-// | SLEEP |  Q    |  W     |  F    | P      |  B  |   |  J  |  L     |  U    |  Y     |  ;    | DEL/POWER |
-// | TAB   | A/ALT | R/CTRL | S/CMD | T/SHFT |  G  |   |  M  | N/SHFT | E/CMD | I/CTRL | O/ALT | BKSP      |
-// | CAPS  |  Z    |  X     |  C    | D      |  V  |   |  K  |  H     |  ,    |  .     |  /    |           |
+// | POWER |  Q    |  W     |  F    | P      |  B  |   |  J  |  L     |  U    |  Y     |  ;    | BSPC     |
+// | TAB   | A/ALT | R/CTRL | S/CMD | T/SHFT |  G  |   |  M  | N/SHFT | E/CMD | I/CTRL | O/ALT | DEL      |
+// | CAPS  |  Z    |  X     |  C    | D      |  V  |   |  K  |  H     |  ,    |  .     |  /    | KEYS_OFF |
 //                          |  ESC  | L1     | SPC |   | ENT | L2     |       |
                         bindings = <
-   &kp K_SLEEP  &kp Q      &kp W       &kp F       &kp P       &kp B          &kp J    &kp L       &kp U      &kp Y      &kp SEMI   &mt K_POWER DEL
-   &kp TAB    &mt LALT A &mt LCTRL R &mt LGUI S  &mt LSHFT T &kp G          &kp M    &mt RSHFT N &mt RGUI E &mt RCTRL I &mt RALT O &kp BSPC
-   &kp CAPS   &kp Z      &kp X       &kp C       &kp D       &kp V          &kp K    &kp H       &kp COMMA  &kp DOT    &kp FSLH   &trans
-                                     &kp ESC     &mo LOWER   &kp SPACE      &kp RET  &mo RAISE   &trans
+   &kp K_POWER  &kp Q       &kp W        &kp F       &kp P        &kp B          &kp J    &kp L        &kp U       &kp Y        &kp SEMI    &kp BSPC
+   &kp TAB      &mt LALT A  &mt LCTRL R  &mt LGUI S  &mt LSHFT T  &kp G          &kp M    &mt RSHFT N  &mt RGUI E  &mt RCTRL I  &mt RALT O  &kp DEL
+   &kp CAPS     &kp Z       &kp X        &kp C       &kp D        &kp V          &kp K    &kp H        &kp COMMA   &kp DOT      &kp FSLH    &soft_off
+                                         &kp ESC     &mo LOWER    &kp SPACE      &kp RET  &mo RAISE    &none
                         >;
                 };
 
@@ -209,9 +209,9 @@
 // |  \  |  ?  |  %  |  =  |  ^  |  <  |   |  :  |  1  |  2  |  3  |  "  |      |
 //                   |     |     | SPC |   | ENT |     |  0  |
                         bindings = <
-   &trans     &kp EXCL     &kp PLUS     &kp MINUS    &kp AMPS       &kp TILDE      &kp HASH       &kp N7         &kp N8         &kp N9       &kp GRAVE    &trans
-   &trans     &kp AT       &kp STAR     &kp FSLH     &kp PIPE       &kp GT         &kp UNDER      &kp N4         &kp N5         &kp N6       &kp SQT      &trans
-   &kp BSLH   &kp QMARK    &kp PRCNT    &kp EQUAL    &kp CARET      &kp LT         &kp COLON      &kp N1         &kp N2         &kp N3       &kp DQT      &trans
+   &none     &kp EXCL     &kp PLUS     &kp MINUS    &kp AMPS       &kp TILDE      &kp HASH       &kp N7         &kp N8         &kp N9       &kp GRAVE    &trans
+   &none     &kp AT       &kp STAR     &kp FSLH     &kp PIPE       &kp GT         &kp UNDER      &kp N4         &kp N5         &kp N6       &kp SQT      &trans
+   &kp BSLH   &kp QMARK    &kp PRCNT    &kp EQUAL    &kp CARET      &kp LT         &kp COLON      &kp N1         &kp N2         &kp N3       &kp DQT      &none
                                         &trans       &trans         &kp SPACE      &kp RET        &trans         &kp N0
                         >;
                 };
@@ -224,10 +224,10 @@
 // |      |     |      |      |       |     |   |     |       |     |      |     |     |
 //                     |      |       | SPC |   | ENT |       |     |
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans         &trans         &trans         &trans         &kp UP        &trans        &trans       &trans
-   &trans     &trans       &trans       &trans       &trans         &trans         &trans         &kp LEFT       &kp DOWN      &kp RIGHT     &trans       &trans
-   &trans     &trans       &trans       &trans       &trans         &trans         &trans         &trans         &trans        &trans        &trans        &trans
-                                        &trans       &trans         &kp SPACE      &kp RET        &trans         &trans
+   &none     &none       &none       &none       &none         &none         &none         &none         &kp UP       &none        &none       &trans
+   &none     &none       &none       &none       &none         &none         &none         &kp LEFT      &kp DOWN     &kp RIGHT    &none       &trans
+   &none     &none       &none       &none       &none         &none         &none         &none         &none        &none        &none       &none
+                                     &trans      &trans        &kp SPACE     &kp RET       &trans        &none
                         >;
                 };
 
@@ -239,10 +239,10 @@
 // |     |           | C_BRI_MIN | MUTE     | PREV       |     |    | F1  | F2  | F3  |  F4 | F5  |     |
 //                               |          |            | SPC |    | ENT |     |     |
                         bindings = <
-   &trans     &kp PG_UP    &kp C_BRI_UP &kp C_VOL_UP &kp C_NEXT     &trans         &kp F11        &kp F12        &kp F13        &kp F14      &kp F16      &trans
-   &trans     &kp PG_DN    &kp C_BRI_DN &kp C_VOL_DN &kp C_PP       &trans         &kp F6         &kp F7         &kp F8         &kp F9       &kp F10      &trans
-   &trans     &trans       &kp C_BRI_MIN &kp C_MUTE  &kp C_PREV     &trans         &kp F1         &kp F2         &kp F3         &kp F4       &kp F5       &trans
-                                        &trans       &trans         &kp SPACE      &kp RET        &trans         &trans
+   &none     &kp PG_UP    &kp C_BRI_UP &kp C_VOL_UP &kp C_NEXT     &none         &kp F11        &kp F12        &kp F13        &kp F14      &kp F16      &trans
+   &none     &kp PG_DN    &kp C_BRI_DN &kp C_VOL_DN &kp C_PP       &none         &kp F6         &kp F7         &kp F8         &kp F9       &kp F10      &trans
+   &none     &none       &kp C_BRI_MIN &kp C_MUTE  &kp C_PREV     &none         &kp F1         &kp F2         &kp F3         &kp F4       &kp F5       &none
+                                        &trans       &trans         &kp SPACE      &kp RET        &trans         &none
                         >;
                 };
 
@@ -254,10 +254,10 @@
 // |      | enum  | match | return | class  |     |   |     | auto   | for       | while   | let  |     |
 //                        |        |        | SPC |   | ENT |        |           |
                         bindings = <
-   &trans     &dotdot_macro &dot_macro   &scope_macro  &thickarrow_macro &trans        &trans      &import_macro  &namespace_macro &std_macro   &trans       &trans
-   &trans     &fn_macro     &impl_macro  &trait_macro  &struct_macro     &trans        &trans      &const_macro  &if_macro      &else_if_macro &else_macro  &trans
-   &trans     &enum_macro   &match_macro &return_macro &class_macro      &trans        &trans      &auto_macro   &for_macro     &while_macro  &let_macro   &trans
-                                         &trans        &trans            &kp SPACE     &kp RET     &trans         &trans
+   &none     &dotdot_macro &dot_macro   &scope_macro  &thickarrow_macro &none        &none      &import_macro  &namespace_macro &std_macro   &none       &trans
+   &none     &fn_macro     &impl_macro  &trait_macro  &struct_macro     &none        &none      &const_macro  &if_macro      &else_if_macro &else_macro  &trans
+   &none     &enum_macro   &match_macro &return_macro &class_macro      &none        &none      &auto_macro   &for_macro     &while_macro  &let_macro   &none
+                                         &trans        &trans            &kp SPACE     &kp RET     &trans         &none
                         >;
                 };
         };
