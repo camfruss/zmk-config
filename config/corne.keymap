@@ -185,7 +185,9 @@
 
         keymap {
                 compatible = "zmk,keymap";
-                display-name = "default_layer";
+
+                default_layer {
+                        display-name = "default_layer";
 // ---------------------------------------------------------------------------------------------------------------------
 // |  POWER     |  Q   |  W   |  F     |  P      |  B   |   |  J    |  L        |  U       |  Y    |  ;       | BSPC   |
 // |  TAB       |  A   |  R   |  S     |  T      |  G   |   |  M    |  N        |  E       |  I    |  O       | DEL    |
