@@ -185,49 +185,50 @@
 
         keymap {
                 compatible = "zmk,keymap";
-
-                default_layer {
-                        display-name = "default_layer";
-// -----------------------------------------------------------------------------------------
-// | POWER |  Q    |  W     |  F    | P      |  B  |   |  J  |  L     |  U    |  Y     |  ;    | BSPC     |
-// | TAB   | A/ALT | R/CTRL | S/CMD | T/SHFT |  G  |   |  M  | N/SHFT | E/CMD | I/CTRL | O/ALT | DEL      |
-// | CAPS  |  Z    |  X     |  C    | D      |  V  |   |  K  |  H     |  ,    |  .     |  /    | KEYS_OFF |
-//                          |  ESC  | L1     | SPC |   | ENT | L2     |       |
+                display-name = "default_layer";
+// ---------------------------------------------------------------------------------------------------------------------
+// |  POWER     |  Q   |  W   |  F     |  P      |  B   |   |  J    |  L        |  U       |  Y    |  ;       | BSPC   |
+// |  TAB       |  A   |  R   |  S     |  T      |  G   |   |  M    |  N        |  E       |  I    |  O       | DEL    |
+// |  CAPS      |  Z   |  X   |  C     |  D      |  V   |   |  K    |  H        |  ,       |  .    |  /       | KB_OFF |
+//                            |  ESC   |  L1     |  SPC |   |  ENT  |  L2       |          |
+// ---------------------------------------------------------------------------------------------------------------------
                         bindings = <
-   &kp K_POWER  &kp Q       &kp W        &kp F       &kp P        &kp B          &kp J    &kp L        &kp U       &kp Y        &kp SEMI    &kp BSPC
-   &kp TAB      &mt LALT A  &mt LCTRL R  &mt LGUI S  &mt LSHFT T  &kp G          &kp M    &mt RSHFT N  &mt RGUI E  &mt RCTRL I  &mt RALT O  &kp DEL
-   &kp CAPS     &kp Z       &kp X        &kp C       &kp D        &kp V          &kp K    &kp H        &kp COMMA   &kp DOT      &kp FSLH    &soft_off
-                                         &kp ESC     &mo LOWER    &kp SPACE      &kp RET  &mo RAISE    &none
+   &kp K_POWER  &kp Q  &kp W  &kp F    &kp P     &kp B      &kp J    &kp L      &kp U      &kp Y    &kp SEMI  &kp BSPC
+   &kp TAB      &kp A  &kp R  &kp S    &kp T     &kp G      &kp M    &kp N      &kp E      &kp I    &kp O     &kp DEL
+   &kp CAPS     &kp Z  &kp X  &kp C    &kp D     &kp V      &kp K    &kp H      &kp COMMA  &kp DOT  &kp FSLH  &soft_off
+                              &kp ESC  &mo LOWER &kp SPACE  &kp RET  &mo RAISE  &none
                         >;
                 };
 
                 lower_layer {
                         display-name = "lower_layer";
-// -----------------------------------------------------------------------------------------
-// |     |  !  |  +  |  -  |  &  |  ~  |   |  #  |  7  |  8  |  9  |  `  |      |
-// |     |  @  |  *  |  /  | "|" |  >  |   |  _  |  4  |  5  |  6  |  '  |      |
-// |  \  |  ?  |  %  |  =  |  ^  |  <  |   |  :  |  1  |  2  |  3  |  "  |      |
-//                   |     |     | SPC |   | ENT |     |  0  |
+// ------------------------------------------------------------------------------------------------------------
+// |        |  !        |  +       |  -       |  &       |  ~  |    |  #       |  7  |  8  |  9  |  `  |      |
+// |        |  @        |  *       |  /       | "|"      |  >  |    |  _       |  4  |  5  |  6  |  '  |      |
+// |  \     |  ?        |  %       |  =       |  ^       |  <  |    |  :       |  1  |  2  |  3  |  "  |      |
+//                                 |          |          | SPC |    | ENT      |     |  0  |
+// ------------------------------------------------------------------------------------------------------------
                         bindings = <
-   &none     &kp EXCL     &kp PLUS     &kp MINUS    &kp AMPS       &kp TILDE      &kp HASH       &kp N7         &kp N8         &kp N9       &kp GRAVE    &trans
-   &none     &kp AT       &kp STAR     &kp FSLH     &kp PIPE       &kp GT         &kp UNDER      &kp N4         &kp N5         &kp N6       &kp SQT      &trans
-   &kp BSLH   &kp QMARK    &kp PRCNT    &kp EQUAL    &kp CARET      &kp LT         &kp COLON      &kp N1         &kp N2         &kp N3       &kp DQT      &none
-                                        &trans       &trans         &kp SPACE      &kp RET        &trans         &kp N0
+   &none     &kp EXCL   &kp PLUS   &kp MINUS  &kp AMPS   &kp TILDE  &kp HASH   &kp N7  &kp N8  &kp N9  &kp GRAVE  &trans
+   &none     &kp AT     &kp STAR   &kp FSLH   &kp PIPE   &kp GT     &kp UNDER  &kp N4  &kp N5  &kp N6  &kp SQT    &trans
+   &kp BSLH  &kp QMARK  &kp PRCNT  &kp EQUAL  &kp CARET  &kp LT     &kp COLON  &kp N1  &kp N2  &kp N3  &kp DQT    &none
+                        &trans     &trans     &kp SPACE  &kp RET    &trans     &kp N0
                         >;
                 };
 
                 raise_layer {
                         display-name = "raise_layer";
-// -----------------------------------------------------------------------------------------
-// |      |     |      |      |       |     |   |     |       |   UP  |      |     |     |
-// |      |     |      |      |       |     |   |     | LEFT  |  DOWN  |   RIGHT   |     |     |
-// |      |     |      |      |       |     |   |     |       |     |      |     |     |
-//                     |      |       | SPC |   | ENT |       |     |
+// --------------------------------------------------------------------------------------------------------------------
+// |     |          |          |         |           |      |   |       |         |  UP     |          |       |      |
+// |     |  ALT     |  CTRL    |  CMD    |  SHIFT    |      |   |       |  LEFT   |  DOWN   |  RIGHT   |       |      |
+// |     |          |          |         |           |      |   |       |         |         |          |       |      |
+//                             |         |           |  SPC |   |  ENT  |         |         |
+// --------------------------------------------------------------------------------------------------------------------
                         bindings = <
-   &none     &none       &none       &none       &none         &none         &none         &none         &kp UP       &none        &none       &trans
-   &none     &none       &none       &none       &none         &none         &none         &kp LEFT      &kp DOWN     &kp RIGHT    &none       &trans
-   &none     &none       &none       &none       &none         &none         &none         &none         &none        &none        &none       &none
-                                     &trans      &trans        &kp SPACE     &kp RET       &trans        &none
+   &none  &none     &none      &none     &none       &none      &none    &none     &kp UP    &none      &none  &trans
+   &none  &sk LALT  &sk LCTRL  &sk LGUI  &sk LSHIFT  &none      &none    &kp LEFT  &kp DOWN  &kp RIGHT  &none  &trans
+   &none  &none     &none      &none     &none       &none      &none    &none     &none     &none      &none  &none
+                               &trans    &trans      &kp SPACE  &kp RET  &trans    &none
                         >;
                 };
 
@@ -238,6 +239,7 @@
 // |     | PAGE_DOWN | C_BRI_DEC | VOL_DOWN | PAUSE/PLAY |     |    | F6  | F7  | F8  |  F9 | F10 |     |
 // |     |           | C_BRI_MIN | MUTE     | PREV       |     |    | F1  | F2  | F3  |  F4 | F5  |     |
 //                               |          |            | SPC |    | ENT |     |     |
+// ---------------------------------------------------------------------------------------------------------------------
                         bindings = <
    &none     &kp PG_UP    &kp C_BRI_UP &kp C_VOL_UP &kp C_NEXT     &none         &kp F11        &kp F12        &kp F13        &kp F14      &kp F16      &trans
    &none     &kp PG_DN    &kp C_BRI_DN &kp C_VOL_DN &kp C_PP       &none         &kp F6         &kp F7         &kp F8         &kp F9       &kp F10      &trans
@@ -253,6 +255,7 @@
 // |      | fn    | impl  | trait  | struct |     |   |     | const  | if        | else if | else |     |
 // |      | enum  | match | return | class  |     |   |     | auto   | for       | while   | let  |     |
 //                        |        |        | SPC |   | ENT |        |           |
+// ---------------------------------------------------------------------------------------------------------------------
                         bindings = <
    &none     &dotdot_macro &dot_macro   &scope_macro  &thickarrow_macro &none        &none      &import_macro  &namespace_macro &std_macro   &none       &trans
    &none     &fn_macro     &impl_macro  &trait_macro  &struct_macro     &none        &none      &const_macro  &if_macro      &else_if_macro &else_macro  &trans
