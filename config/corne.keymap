@@ -183,6 +183,13 @@
                 };
         };
 
+        behaviors {
+                sk {
+                        release-after-ms = <5000>;
+                        quick-release;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -244,8 +251,8 @@
 // ---------------------------------------------------------------------------------------------------------------------
                         bindings = <
    &none     &kp PG_UP    &kp C_BRI_UP &kp C_VOL_UP &kp C_NEXT     &none         &kp F11        &kp F12        &kp F13        &kp F14      &kp F16      &trans
-   &none     &kp PG_DN    &kp C_BRI_DN &kp C_VOL_DN &kp C_PP       &none         &kp F6         &kp F7         &kp F8         &kp F9       &kp F10      &trans
-   &none     &none       &kp C_BRI_MIN &kp C_MUTE  &kp C_PREV     &none         &kp F1         &kp F2         &kp F3         &kp F4       &kp F5       &none
+   &none     &kp PG_DN    &kp C_BRI_DN  &kp C_VOL_DN &kp C_PP       &none         &kp F6         &kp F7         &kp F8         &kp F9       &kp F10      &trans
+   &none     &none        &kp C_BRI_MIN &kp C_MUTE  &kp C_PREV     &none         &kp F1         &kp F2         &kp F3         &kp F4       &kp F5       &none
                                         &trans       &trans         &kp SPACE      &kp RET        &trans         &none
                         >;
                 };
